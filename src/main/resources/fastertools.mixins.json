@@ -4,7 +4,7 @@
   "package": "org.cloudwarp.fastertools.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ToolMaterialsMixin"
+    "MiningToolItemMixin"
   ],
   "client": [
   ],

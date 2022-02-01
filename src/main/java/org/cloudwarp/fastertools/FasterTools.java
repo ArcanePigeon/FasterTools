@@ -8,6 +8,4 @@ public class FasterTools implements ModInitializer {
     public void onInitialize() {
     }
 
-
-
 }
