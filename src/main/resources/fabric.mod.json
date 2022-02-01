@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "fastertools",
+  "version": "${version}",
+
+  "name": "Faster tools",
+  "description": "Increases the default mining speed of all tools",
+  "authors": [
+    "ProbabilityPigeon"
+  ],
+  "contact": {
+    "homepage": "https://cloudwarp.org/",
+    "sources": "https://github.com/ReillyGregorio/FasterTools.git"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/fastertools/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.cloudwarp.fastertools.FasterTools"
+    ],
+    "client": [
+      "org.cloudwarp.fastertools.client.FasterToolsClient"
+    ]
+  },
+  "mixins": [
+    "fastertools.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

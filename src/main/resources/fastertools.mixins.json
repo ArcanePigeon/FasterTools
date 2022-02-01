@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.cloudwarp.fastertools.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ToolMaterialsMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
