@@ -30,7 +30,7 @@ public class MiningToolItemMixin extends ToolItem implements Vanishable {
      */
     @Overwrite
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed * (FasterToolsUtils.world.getGameRules().getInt(ModGameRules.TOOL_SPEED_MODIFIER) / 100f) : (FasterToolsUtils.world.getGameRules().getInt(ModGameRules.TOOL_SPEED_MODIFIER) / 100f);
+        return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed * (FasterTools.toolSpeedModifier / 100f) : (FasterTools.toolSpeedModifier / 100f);
     }
 
 }

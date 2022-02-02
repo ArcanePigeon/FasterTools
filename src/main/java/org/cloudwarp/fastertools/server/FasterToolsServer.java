@@ -11,11 +11,11 @@ import org.cloudwarp.fastertools.FasterToolsUtils;
 public class FasterToolsServer implements DedicatedServerModInitializer {
     @Override
     public void onInitializeServer() {
-        ServerWorldEvents.LOAD.register((server, world) -> {
+        /*ServerWorldEvents.LOAD.register((server, world) -> {
             if(world != null){
                 FasterToolsUtils.world = world;
             }
         });
-        System.out.println("Server " + FasterToolsUtils.world);
+        System.out.println("Server " + FasterToolsUtils.world);*/
     }
 }

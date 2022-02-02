@@ -23,9 +23,6 @@
     ],
     "client": [
       "org.cloudwarp.fastertools.client.FasterToolsClient"
-    ],
-    "server:": [
-      "org.cloudwarp.fastertools.server.FasterToolsServer"
     ]
   },
   "mixins": [
