@@ -1,11 +1,7 @@
 package org.cloudwarp.fastertools;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 
 public class FasterTools implements ModInitializer {
     public static final String MOD_ID = "fastertools";

@@ -1,15 +1,10 @@
 package org.cloudwarp.fastertools.mixin;
 
-import net.fabricmc.fabric.api.gamerule.v1.FabricGameRuleVisitor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.*;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.tag.Tag;
 import org.cloudwarp.fastertools.FasterTools;
-import org.cloudwarp.fastertools.FasterToolsUtils;
-import org.cloudwarp.fastertools.ModGameRules;
-import org.cloudwarp.fastertools.client.FasterToolsClient;
 import org.spongepowered.asm.mixin.*;
 import net.minecraft.item.ToolItem;
 

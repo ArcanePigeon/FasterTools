@@ -20,8 +20,5 @@ public class ModGameRules {
                     ServerPlayNetworking.send(player, FasterToolsNetworking.TOOL_SPEED_MODIFIER, buffer);
                 }
             }));
-    //public static final GameRules.Key<GameRules.IntRule> TOOL_SPEED_MODIFIER = GameRuleRegistry.register("toolSpeedModifier", GameRules.Category.MISC,GameRuleFactory.createIntRule(150));
-    public static void init(){
-
-    }
+    public static void init(){}
 }

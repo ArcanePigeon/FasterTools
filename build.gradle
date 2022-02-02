@@ -87,9 +87,9 @@ publishing {
 }
 
 curseforge {
-	apiKey = "XXXXX"
+	apiKey = "80963dd4-ef61-495b-bee8-3cf30d2e2ab6"
 	project {
-		id = "XXXX"
+		id = "575663"
 		releaseType = "release"
 		addGameVersion "1.18.1"
 		addGameVersion "Java 17"
