@@ -7,25 +7,16 @@ import net.minecraft.tag.Tag;
 import org.cloudwarp.fastertools.FasterTools;
 import org.spongepowered.asm.mixin.*;
 import net.minecraft.item.ToolItem;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MiningToolItem.class)
-public class MiningToolItemMixin extends ToolItem implements Vanishable {
-    @Shadow
-    private Tag<Block> effectiveBlocks;
-    @Shadow
-    protected float miningSpeed;
-
-    public MiningToolItemMixin(ToolMaterial material, Settings settings) {
-        super(material, settings);
-        throw new IllegalStateException();
-    }
-    /**
-     * @author ProbabilityPigeon
-     * @reason To increase mining speed.
-     */
-    @Overwrite
-    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed * (FasterTools.toolSpeedModifier / 100f) : (FasterTools.toolSpeedModifier / 100f);
+public class MiningToolItemMixin {
+    @Inject(method = "getMiningSpeedMultiplier", at = @At("RETURN"), cancellable = true)
+    private void getMiningSpeedMultiplier(CallbackInfoReturnable<Float> cir) {
+        cir.setReturnValue(cir.getReturnValueF()*(FasterTools.toolSpeedModifier/100f));
+        //return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed * (FasterTools.toolSpeedModifier / 100f) : (FasterTools.toolSpeedModifier / 100f);
     }
 
 }
