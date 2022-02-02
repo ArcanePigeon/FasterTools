@@ -14,10 +14,12 @@ public class ModGameRules {
     public static final GameRules.Key<GameRules.IntRule> TOOL_SPEED_MODIFIER_RULE =
             GameRuleRegistry.register("toolSpeedModifier", GameRules.Category.MISC, GameRuleFactory.createIntRule(150, (server, rule) -> {
                 List<ServerPlayerEntity> players = server.getPlayerManager().getPlayerList();
-                PacketByteBuf buffer = new PacketByteBuf(PacketByteBufs.create().writeString("toolSpeedModifier").writeInt(rule.get()));
+                PacketByteBuf buffer = new PacketByteBuf(PacketByteBufs.create().writeInt(rule.get()));
                 for (ServerPlayerEntity player : players) {
-                    ServerPlayNetworking.send(player, FasterToolsNetworking.UPDATE_INTEGER_GAMERULE_PACKET, buffer);
+                    ServerPlayNetworking.send(player, FasterToolsNetworking.TOOL_SPEED_MODIFIER, buffer);
                 }
             }));
+    public static void init(){
 
+    }
 }
