@@ -1,8 +1,7 @@
 package org.cloudwarp.fastertools;
 
-public class FasterToolsUtils {
+import net.minecraft.world.World;
 
-    public interface ServerPlayerEntityExtensions {
-        void fasterTools$setToolSpeedModifier(int value);
-    }
+public class FasterToolsUtils {
+    public static World world;
 }
