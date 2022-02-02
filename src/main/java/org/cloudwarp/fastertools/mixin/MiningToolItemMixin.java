@@ -9,6 +9,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.tag.Tag;
+import org.cloudwarp.fastertools.FasterTools;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -30,10 +31,11 @@ public class MiningToolItemMixin extends ToolItem implements Vanishable {
 
     /**
      * @author ProbabilityPigeon
+     * @reason To increase mining speed.
      */
     @Overwrite
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed*5f : 5f;
+        return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed * FasterTools.getToolSpeedModifier() : FasterTools.getToolSpeedModifier();
     }
 
 }
