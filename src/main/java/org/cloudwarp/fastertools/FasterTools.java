@@ -1,21 +1,15 @@
 package org.cloudwarp.fastertools;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.ConfigHolder;
-import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.util.Identifier;
 
 public class FasterTools implements ModInitializer {
     public static final String MOD_ID = "fastertools";
-    public static ConfigHolder<FasterToolsConfig> configHolder;
-
     @Override
     public void onInitialize() {
-        AutoConfig.register(FasterToolsConfig.class, JanksonConfigSerializer::new);
-        configHolder = AutoConfig.getConfigHolder(FasterToolsConfig.class);
+        FasterToolsNetworking.init();
     }
-    public static FasterToolsConfig getConfig() {
-        return configHolder.getConfig();
+    public static Identifier id(String path) {
+        return new Identifier(MOD_ID, path);
     }
-
 }
