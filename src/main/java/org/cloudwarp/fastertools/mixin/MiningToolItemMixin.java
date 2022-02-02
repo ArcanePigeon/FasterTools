@@ -10,6 +10,7 @@ import net.minecraft.item.*;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.tag.Tag;
 import org.cloudwarp.fastertools.FasterTools;
+import org.cloudwarp.fastertools.FasterToolsConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -25,8 +26,10 @@ public class MiningToolItemMixin extends ToolItem implements Vanishable {
     private Tag<Block> effectiveBlocks;
     @Shadow
     protected float miningSpeed;
+    private FasterToolsConfig config;
     public MiningToolItemMixin(ToolMaterial material, Settings settings) {
         super(material, settings);
+        config = FasterTools.getConfig();
     }
 
     /**
@@ -35,7 +38,7 @@ public class MiningToolItemMixin extends ToolItem implements Vanishable {
      */
     @Overwrite
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed * FasterTools.getToolSpeedModifier() : FasterTools.getToolSpeedModifier();
+        return this.effectiveBlocks.contains(state.getBlock()) ? this.miningSpeed * (config.toolSpeedModifier / 100f  + 1f) : (config.toolSpeedModifier / 100f  + 1f);
     }
 
 }

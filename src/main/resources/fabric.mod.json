@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "org.cloudwarp.fastertools.FasterTools"
+    ],
+    "modmenu": [
+      "org.cloudwarp.fastertools.client.FasterToolsModMenuIntegration"
     ]
   },
   "mixins": [
@@ -30,7 +33,8 @@
     "fabricloader": ">=0.12.12",
     "fabric": "*",
     "minecraft": "1.18.x",
-    "java": ">=17"
+    "java": ">=17",
+    "cloth-config2": ">=6.0.42"
   },
   "suggests": {
     "another-mod": "*"
