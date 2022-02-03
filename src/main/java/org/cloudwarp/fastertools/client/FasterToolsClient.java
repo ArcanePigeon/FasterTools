@@ -9,11 +9,11 @@ import org.cloudwarp.fastertools.FasterToolsNetworking;
 
 @Environment(EnvType.CLIENT)
 public class FasterToolsClient implements ClientModInitializer {
-    @Override
-    public void onInitializeClient() {
-        ClientPlayNetworking.registerGlobalReceiver(FasterToolsNetworking.TOOL_SPEED_MODIFIER, (client, handler, buf, responseSender) -> {
-            int value = buf.readInt();
-            client.execute(() -> FasterTools.toolSpeedModifier = value);
-        });
-    }
+	@Override
+	public void onInitializeClient () {
+		ClientPlayNetworking.registerGlobalReceiver(FasterToolsNetworking.TOOL_SPEED_MODIFIER, (client, handler, buf, responseSender) -> {
+			int value = buf.readInt();
+			client.execute(() -> FasterTools.toolSpeedModifier = value);
+		});
+	}
 }
