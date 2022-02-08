@@ -12,3 +12,6 @@ All notable changes to this project will be documented in this file.
 - Modded tools should work most of the time.
 - Speed now applies to non tools (Ex: your fist)
 
+## [1.2.0] - 2/8/2022
+### Added
+- Gamerule to enable/disable non tool mining speed from being modified.
