@@ -15,5 +15,9 @@ public class FasterToolsClient implements ClientModInitializer {
 			int value = buf.readInt();
 			client.execute(() -> FasterTools.toolSpeedModifier = value);
 		});
+		ClientPlayNetworking.registerGlobalReceiver(FasterToolsNetworking.NON_TOOL_MODIFICATION, (client, handler, buf, responseSender) -> {
+			boolean value = buf.readBoolean();
+			client.execute(() -> FasterTools.doNonToolSpeedModification = value);
+		});
 	}
 }

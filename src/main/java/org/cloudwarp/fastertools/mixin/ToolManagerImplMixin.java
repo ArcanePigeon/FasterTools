@@ -15,7 +15,7 @@ public class ToolManagerImplMixin {
 		if (cir.getReturnValue() == null) {
 			return;
 		}
-		cir.setReturnValue(TypedActionResult.pass(cir.getReturnValue().getValue() * (FasterTools.toolSpeedModifier / 100f)));
+		cir.setReturnValue(TypedActionResult.pass(cir.getReturnValue().getValue() * (FasterTools.doNonToolSpeedModification ? (FasterTools.toolSpeedModifier / 100f) : 1f)));
 	}
 }
 
@@ -26,7 +26,7 @@ class ToolManagerImplHandleMixin {
 		if (cir.getReturnValue() == null) {
 			return;
 		}
-		cir.setReturnValue(cir.getReturnValue() * (FasterTools.toolSpeedModifier / 100f));
+		cir.setReturnValue(cir.getReturnValue() * (FasterTools.doNonToolSpeedModification ? (FasterTools.toolSpeedModifier / 100f) : 1f));
 	}
 }
 

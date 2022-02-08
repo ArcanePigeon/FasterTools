@@ -1,3 +1,4 @@
 {
-  "gamerule.toolSpeedModifier": "Tool Speed Percentage"
+  "gamerule.toolSpeedModifier": "Tool Speed Percentage",
+  "gamerule.doNonToolSpeedModification": "Modify The Mining Speed Of Non Tools"
 }

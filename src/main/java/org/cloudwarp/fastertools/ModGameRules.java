@@ -20,6 +20,15 @@ public class ModGameRules {
 					ServerPlayNetworking.send(player, FasterToolsNetworking.TOOL_SPEED_MODIFIER, buffer);
 				}
 			}));
+	public static final GameRules.Key<GameRules.BooleanRule> NON_TOOL_MODIFICATION_RULE =
+			GameRuleRegistry.register("doNonToolSpeedModification", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false, (server, rule) -> {
+				List<ServerPlayerEntity> players = server.getPlayerManager().getPlayerList();
+				PacketByteBuf buffer = new PacketByteBuf(PacketByteBufs.create().writeBoolean(rule.get()));
+				FasterTools.doNonToolSpeedModification = rule.get();
+				for (ServerPlayerEntity player : players) {
+					ServerPlayNetworking.send(player, FasterToolsNetworking.NON_TOOL_MODIFICATION, buffer);
+				}
+			}));
 
 	public static void init () {
 	}
