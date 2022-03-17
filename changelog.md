@@ -15,3 +15,9 @@ All notable changes to this project will be documented in this file.
 ## [1.2.0] - 2/8/2022
 ### Added
 - Gamerule to enable/disable non tool mining speed from being modified.
+
+## [1.2.1] - 3/17/2022
+### Changed
+- Removed gamerule in favor of a config.
+- Changed default speed change to 25% increase.
+- Removed option to change non tool speed (may be added back later)

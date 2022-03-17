@@ -4,20 +4,17 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.minecraft.nbt.NbtCompound;
+import org.cloudwarp.fastertools.Config;
 import org.cloudwarp.fastertools.FasterTools;
-import org.cloudwarp.fastertools.FasterToolsNetworking;
 
 @Environment(EnvType.CLIENT)
 public class FasterToolsClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient () {
-		ClientPlayNetworking.registerGlobalReceiver(FasterToolsNetworking.TOOL_SPEED_MODIFIER, (client, handler, buf, responseSender) -> {
-			int value = buf.readInt();
-			client.execute(() -> FasterTools.toolSpeedModifier = value);
-		});
-		ClientPlayNetworking.registerGlobalReceiver(FasterToolsNetworking.NON_TOOL_MODIFICATION, (client, handler, buf, responseSender) -> {
-			boolean value = buf.readBoolean();
-			client.execute(() -> FasterTools.doNonToolSpeedModification = value);
+		ClientPlayNetworking.registerGlobalReceiver(FasterTools.id("faster_tools_config_update"), (client, networkHandler, data, sender) -> {
+			NbtCompound tag = data.readNbt();
+			client.execute(() -> Config.getInstance().loadConfig(tag));
 		});
 	}
 }
