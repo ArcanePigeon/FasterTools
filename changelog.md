@@ -17,6 +17,8 @@ All notable changes to this project will be documented in this file.
 - Gamerule to enable/disable non tool mining speed from being modified.
 
 ## [1.2.1] - 3/17/2022
+### Updated
+- Faster Tools is now on 1.18.2
 ### Changed
 - Removed gamerule in favor of a config.
 - Changed default speed change to 25% increase.
