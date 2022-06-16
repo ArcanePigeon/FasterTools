@@ -23,3 +23,7 @@ All notable changes to this project will be documented in this file.
 - Removed gamerule in favor of a config.
 - Changed default speed change to 25% increase.
 - Removed option to change non tool speed (may be added back later)
+
+## [1.3.0] - 6/16/2022
+### Updated
+- Now on 1.19!
