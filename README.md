@@ -1,4 +1,4 @@
-# Mob Scarecrow
+# Faster Tools
 A Fabric mod for Minecraft that increases the default mining speed of tools.
 
 ## Releases
