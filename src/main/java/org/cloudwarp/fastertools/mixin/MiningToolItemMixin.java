@@ -1,7 +1,7 @@
 package org.cloudwarp.fastertools.mixin;
 
 import net.minecraft.item.MiningToolItem;
-import org.cloudwarp.fastertools.Config;
+import org.cloudwarp.fastertools.FTConfig;
 import org.cloudwarp.fastertools.FasterTools;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,8 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MiningToolItemMixin {
 	@Inject(method = "getMiningSpeedMultiplier", at = @At("RETURN"), cancellable = true)
 	private void getMiningSpeedMultiplier (CallbackInfoReturnable<Float> cir) {
-		Config config = Config.getInstance();
-		cir.setReturnValue(cir.getReturnValueF() * (config.getToolSpeedModifier() / 100f));
+		cir.setReturnValue(cir.getReturnValueF() * FasterTools.toolSpeedModifier);
 	}
 
 }

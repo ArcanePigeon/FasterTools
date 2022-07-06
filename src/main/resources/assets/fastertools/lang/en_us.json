@@ -1,4 +1,5 @@
 {
-  "gamerule.toolSpeedModifier": "Tool Speed Percentage",
-  "gamerule.doNonToolSpeedModification": "Modify The Mining Speed Of Non Tools"
+  "text.autoconfig.fastertools.option.toolSpeedModifier": "Tool Speed Modifier",
+  "text.autoconfig.fastertools.option.toolSpeedModifier.@Tooltip": "How many times faster should tools mine relative to the default tool speed.",
+  "text.autoconfig.fastertools.title": "Faster Tools"
 }
