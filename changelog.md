@@ -27,3 +27,8 @@ All notable changes to this project will be documented in this file.
 ## [1.3.0] - 6/16/2022
 ### Updated
 - Now on 1.19!
+
+## [1.4.0] - 7/9/2022
+### Added
+- Mod menu compat
+- Cloth config compat
