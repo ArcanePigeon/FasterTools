@@ -32,3 +32,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Mod menu compat
 - Cloth config compat
+
+## [1.4.0 - 1.19.1] - 8/2/2022
+### Updated
+- Updated to 1.19.1
